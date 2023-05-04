@@ -34,12 +34,12 @@ module.exports.signIn=function(req,res){
 
 module.exports.create = async function (req, res) {
     if (req.body.password != req.body.comfirm_password) {
-        console.log(' passport are not correct !!');
+        // console.log(' passport are not correct !!');
       return res.redirect("back");
     }
     let user = await User.findOne({ email: req.body.email });
     if (!user) {
-        console.log('increate !!');
+        // console.log('increate !!');
       await User.create(req.body);
       return res.redirect("/users/sign-in");
     }
@@ -49,5 +49,14 @@ module.exports.create = async function (req, res) {
 
 // sign in and create a session for the user
 module.exports.createSession=function (req,res){
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req,res){
+    req.logout(function(err){
+        if (err) {
+            console.log(err);
+          }
+    });
     return res.redirect('/');
 }
