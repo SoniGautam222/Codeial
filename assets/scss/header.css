@@ -1,0 +1,20 @@
+#Codeial {
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  background-color: #27a2d3;
+  height: 8%;
+  font-family: Georgia; }
+
+ul {
+  display: flex;
+  height: 70%;
+  width: 15%;
+  margin-left: 73%;
+  margin-top: 3px;
+  justify-content: space-between; }
+  ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none; }

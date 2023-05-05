@@ -8,7 +8,16 @@ const expressLayouts = require('express-ejs-layouts');
 const passport=require('passport');
 const passportLocal =require('./config/passport-local-stratergy');
 const db=require('./config/mongoose');
+const sassMiddleWare=require('node-sass-middleware');
 
+
+app.use(sassMiddleWare({
+    src: './assets/scss',
+    dest : './assets/scss',
+    debug : true,
+    outputStyle : 'extended',
+    prefix: '/css'
+}));
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static('./assets'));
