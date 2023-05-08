@@ -13,7 +13,7 @@ const sassMiddleWare=require('node-sass-middleware');
 
 app.use(sassMiddleWare({
     src: './assets/scss',
-    dest : './assets/scss',
+    dest : './assets/css',
     debug : true,
     outputStyle : 'extended',
     prefix: '/css'
@@ -56,6 +56,15 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routes'));
+
+// app.get('/',function(req,res){
+//    return res.send(' hello ');
+
+// })
+// app.get('/profile',function(req,res){
+//     return res.send(' hello this is my profile');
+ 
+//  })
 
 app.listen(port,function(err){
     if(err){
